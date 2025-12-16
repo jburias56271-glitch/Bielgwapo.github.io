@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jubiel Burias - Personal Bibliography</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Body & Background */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            background-image: url('background.jpg'); /* Upload background image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+        }
+
+        /* Neon effect */
+        .neon {
+            color: #fff;
+            text-shadow:
+                0 0 5px #ff00ff,
+                0 0 10px #ff00ff,
+                0 0 20px #ff00ff,
+                0 0 40px #ff00ff;
+        }
+
+        /* Sections */
+        section {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0,0,0,0.7);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        /* Profile Image */
+        .profile {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        /* Links */
+        a {
+            color: #ff00ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #00ffff;
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Audio Player (optional) */
+        audio {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1 class="neon">Jubiel Burias - Personal Bibliography</h1>
+        <!-- Optional audio -->
+        <!-- <audio controls loop>
+            <source src="streetbeat.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio> -->
+    </header>
+
+    <!-- Basic Info -->
+    <section id="basic-info">
+        <h2>Basic Information</h2>
+        <img src="profile.jpg" class="profile" alt="Profile Picture"> <!-- Upload profile.jpg -->
+        <p><b>Name:</b> Jubiel Burias</p>
+        <p><b>Age:</b> 18</p>
+        <p><b>Birthday:</b> June 29, 2007</p>
+        <p><b>Contact:</b> jburias56271@liceo.edu.ph</p>
+    </section>
+
+    <!-- Hobbies -->
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Sewing</li>
+            <li>Thrifting</li>
+            <li>Print shirt design</li>
+        </ul>
+    </section>
+
+    <!-- Talents / Skills -->
+    <section id="skills">
+        <h2>Talents / Skills</h2>
+        <ul>
+            <li>I can work with consistency</li>
+            <li>Basic HTML & CSS</li>
+            <li>Teamwork</li>
+        </ul>
+    </section>
+
+    <!-- Interesting Facts -->
+    <section id="facts">
+        <h2>Interesting Facts</h2>
+        <p>I enjoy customizing thrifted clothes and turning them into unique pieces.</p>
+    </section>
+
+    <!-- Social Media -->
+    <section id="social">
+        <h2>Social Media</h2>
+        <p><a href="https://www.facebook.com/Jubielpedroso2007" target="_blank">Facebook</a></p>
+    </section>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+
+</body>
+</html>
